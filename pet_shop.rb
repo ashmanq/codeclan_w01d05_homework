@@ -77,7 +77,6 @@ def customer_can_afford_pet(customer, new_pet)
 end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
-
   if pet != nil
     if customer_can_afford_pet(customer, pet)
       #gather required information
@@ -92,9 +91,4 @@ def sell_pet_to_customer(pet_shop, pet, customer)
       remove_pet_by_name(pet_shop, name)
     end
   end
-
-  # assert_equal(1, customer_pet_count(customer))
-  # assert_equal(1, pets_sold(@pet_shop))
-  # assert_equal(100, customer_cash(customer))
-  # assert_equal(1900, total_cash(@pet_shop))
 end
