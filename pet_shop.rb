@@ -1,49 +1,3 @@
-@pet_shop = {
-  pets: [
-    {
-      name: "Sir Percy",
-      pet_type: :cat,
-      breed: "British Shorthair",
-      price: 500
-    },
-    {
-      name: "King Bagdemagus",
-      pet_type: :cat,
-      breed: "British Shorthair",
-      price: 500
-    },
-    {
-      name: "Sir Lancelot",
-      pet_type: :dog,
-      breed: "Pomsky",
-      price: 1000,
-    },
-    {
-      name: "Arthur",
-      pet_type: :dog,
-      breed: "Husky",
-      price: 900,
-    },
-    {
-      name: "Tristan",
-      pet_type: :dog,
-      breed: "Basset Hound",
-      price: 800,
-    },
-    {
-      name: "Merlin",
-      pet_type: :cat,
-      breed: "Egyptian Mau",
-      price: 1500,
-    }
-  ],
-  admin: {
-    total_cash: 1000,
-    pets_sold: 0,
-  },
-  name: "Camelot of Pets"
-}
-
 def pet_shop_name(pet_shop)
   return pet_shop[:name]
 end
@@ -91,8 +45,6 @@ def find_pet_by_name(pet_shop, pet_name)
 end
 
 def remove_pet_by_name(pet_shop, name)
-  #pet_list = pet_shop[:pets]
-  #pet_name_match[]
   pet_shop[:pets].delete_if{|x| x[:name] =- name}
 end
 
@@ -100,4 +52,6 @@ def add_pet_to_stock(pet_shop, new_pet)
   pet_shop[:pets].push(new_pet)
 end
 
-p remove_pet_by_name(@pet_shop, "Arthur")
+def customer_cash(customer)
+  return customer[:cash]
+end
