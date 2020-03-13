@@ -75,3 +75,23 @@ def customer_can_afford_pet(customer, new_pet)
     return false
   end
 end
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+
+  #gather required information
+  name = pet[:name]
+  amount = pet[:price]
+
+  #assuming only one pet is sold per transaction
+  increase_pets_sold(pet_shop,1)
+
+  remove_customer_cash(customer, amount)
+  add_or_remove_cash(pet_shop, amount)
+  add_pet_to_customer(customer, pet)
+  remove_pet_by_name(pet_shop, name)
+
+  # assert_equal(1, customer_pet_count(customer))
+  # assert_equal(1, pets_sold(@pet_shop))
+  # assert_equal(100, customer_cash(customer))
+  # assert_equal(1900, total_cash(@pet_shop))
+end
