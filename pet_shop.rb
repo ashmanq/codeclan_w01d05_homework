@@ -44,4 +44,6 @@ def find_pet_by_name(pet_shop, pet_name)
 
 end
 
-p @pet_shop[:pets]
+def remove_pet_by_name(pet_shop, name)
+  pet_shop[:pets][0].delete(name)
+end
